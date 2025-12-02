@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My To-Do List</h1>
+            <p class="subtitle">Stay organized, stay productive</p>
+        </header>
+        
+        <div class="todo-input-section">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="What needs to be done?"
+                    autocomplete="off"
+                >
+                <input 
+                    type="date" 
+                    id="todoDate" 
+                    class="date-input"
+                    title="Due date"
+                >
+                <button id="addBtn" class="add-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="notification-section">
+            <button id="notificationBtn" class="notification-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <span id="notificationStatus">Enable Notifications</span>
+            </button>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="todo-stats">
+            <span id="todoCount">0 tasks remaining</span>
+            <span id="overdueCount" class="overdue-badge" style="display: none;"></span>
+        </div>
+
+        <ul id="todoList" class="todo-list"></ul>
+
+        <div id="emptyState" class="empty-state">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+            <p>No tasks yet. Add one above!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
